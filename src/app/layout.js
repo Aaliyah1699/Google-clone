@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import './globals.css';
 
 export const metadata = {
-    title: 'Searchi',
+    title: 'Searci',
     description:
         'An open source Google clone built with Next.js and Tailwind CSS.',
 };
