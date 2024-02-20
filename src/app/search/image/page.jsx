@@ -1,4 +1,5 @@
 import ImageSearchResults from '@/components/ImageSearchResults';
+import { Suspense } from 'react';
 import Link from 'next/link';
 
 export default async function ImageSearchPage({ searchParams }) {
@@ -26,6 +27,9 @@ export default async function ImageSearchPage({ searchParams }) {
             </div>
         );
     }
-
-    return <div>{results && <ImageSearchResults results={data} />}</div>;
+    return (
+        <Suspense>
+            <div>{results && <ImageSearchResults results={data} />}</div>
+        </Suspense>
+    );
 }
