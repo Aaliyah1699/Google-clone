@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { BsFillMicFill } from 'react-icons/bs';
+import { RiSearchEyeLine } from 'react-icons/ri';
+import { BsMic } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
 
 const HomeSearch = () => {
@@ -17,7 +17,7 @@ const HomeSearch = () => {
     };
 
     const randomSearch = async (e) => {
-      setRandomSearchLoading(true);
+        setRandomSearchLoading(true);
         const response = await fetch(
             'https://random-word-api.herokuapp.com/word'
         )
@@ -32,26 +32,27 @@ const HomeSearch = () => {
         <>
             <form
                 onSubmit={handleSubmit}
-                className='flex w-full mt-5 mx-auto max-w-[90%] border border-gray-200 px-5 py-3 rounded-full hover:shadow-md focus-within:shadow-md transition-shadow sm:max-w-xl lg:max-w-2xl'
+                className='bg-slate-900 text-slate-200 flex w-full mt-5 mx-auto max-w-[90%] border border-slate-200 px-5 py-3 rounded-full hover:shadow-md focus-within:shadow-md transition-shadow sm:max-w-xl lg:max-w-2xl'
             >
-                <AiOutlineSearch className='text-xl text-gray-500 mr-3' />
+                <RiSearchEyeLine className='text-xl text-blue-500 mr-3' />
                 <input
                     type='text'
-                    className='flex-grow focus:outline-none'
+                    placeholder='Search with Searci'
+                    className='flex-grow focus:outline-none bg-slate-900'
                     onChange={(e) => setInput(e.target.value)}
                 />
-                <BsFillMicFill className='text-lg' />
+                <BsMic className='text-lg text-yellow-400' />
             </form>
             <div className='flex flex-col space-y-2 sm:space-y-0 justify-center sm:flex-row mt-8 sm:space-x-4'>
                 <button
-                    className='bg-[#f8f9fa] rounded-md text-sm text-gray-800 hover:ring-gray-200 focus:outline-none active:ring-gray-300 hover:shadow-md w-36 h-10 transition-shadow'
+                    className='bg-slate-900 rounded-md text-sm text-slate-200 hover:ring-gray-200 focus:outline-none active:ring-gray-200 hover:shadow-md w-36 h-10 transition-shadow'
                     onClick={handleSubmit}
                 >
                     Google Search
                 </button>
                 <button
                     disabled={randomSearchLoading}
-                    className='bg-[#f8f9fa] rounded-md text-sm text-gray-800 hover:ring-gray-200 focus:outline-none active:ring-gray-300 hover:shadow-md w-36 h-10 transition-shadow disabled:opacity-80 disabled:shadow-sm'
+                    className='bg-slate-900 rounded-md text-sm text-slate-200 hover:ring-gray-200 focus:outline-none active:ring-gray-200 hover:shadow-md w-36 h-10 transition-shadow disabled:opacity-80 disabled:shadow-sm'
                     onClick={randomSearch}
                 >
                     {randomSearchLoading ? 'Loading...' : 'I am feeling lucky'}
