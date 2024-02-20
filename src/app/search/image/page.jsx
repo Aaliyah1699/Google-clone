@@ -1,7 +1,7 @@
 import ImageSearchResults from '@/components/ImageSearchResults';
 import Link from 'next/link';
 
-const ImageSearchPage = async ({ searchParams }) => {
+export default async function ImageSearchPage({ searchParams }) {
     const startIndex = searchParams.start || '1';
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const response = await fetch(
@@ -26,7 +26,6 @@ const ImageSearchPage = async ({ searchParams }) => {
             </div>
         );
     }
-    return <div>{results && <ImageSearchResults results={data} />}</div>;
-};
 
-export default ImageSearchPage;
+    return <div>{results && <ImageSearchResults results={data} />}</div>;
+}
