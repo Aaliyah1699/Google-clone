@@ -12,7 +12,7 @@ const WebSearchResults = ({ results }) => {
             {results.items?.map((result) => (
                 <div className='mb-8 max-w-xl' key={result.link}>
                     <div className='group flex flex-col'>
-                        <Link href={result.link} classname='text-slate-500'>{result.formattedUrl}</Link>
+                        <Link href={result.link} className='text-slate-500'>{result.formattedUrl}</Link>
                         <Link
                             href={result.link}
                             className='group-hover:underline decoration-blue-500 text-xl truncate font-medium text-blue-500'

@@ -4,7 +4,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FaCameraRetro } from 'react-icons/fa';
 import { RiSearchEyeFill } from 'react-icons/ri';
 
-
 const SearchHeaderOptions = () => {
     const router = useRouter();
     const searchParams = useSearchParams();

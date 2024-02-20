@@ -2,8 +2,6 @@ import { VscGithub } from 'react-icons/vsc';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { GiEyelashes } from 'react-icons/gi';
 
-// Add github & linkedin
-
 const Footer = () => {
     return (
         <footer className='absolute bottom-0 text-sm bg-slate-900 text-slate-200 w-full'>
